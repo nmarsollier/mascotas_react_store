@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "ES5",
     "declaration": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -8,8 +8,8 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ES2015",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "Classic",
     "resolveJsonModule": true,
     "isolatedModules": false,
     "noEmit": true,
