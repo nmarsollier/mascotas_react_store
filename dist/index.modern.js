@@ -1,3 +1,21 @@
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
 function unwrapExports (x) {
@@ -415,18 +433,20 @@ var StoreAction;
   StoreAction[StoreAction["CLEANUP"] = 1] = "CLEANUP";
 })(StoreAction || (StoreAction = {}));
 
-const sessionStore = createStore((state = {}, action) => {
+var sessionStore = createStore(function (state, action) {
+  if (state === void 0) {
+    state = {};
+  }
+
   switch (action.type) {
     case StoreAction.UPDATE:
-      return { ...state,
-        ...action.payload
-      };
+      return _extends({}, state, action.payload);
 
     case StoreAction.CLEANUP:
-      return { ...state,
+      return _extends({}, state, {
         token: undefined,
         user: undefined
-      };
+      });
 
     default:
       return state;
@@ -435,7 +455,7 @@ const sessionStore = createStore((state = {}, action) => {
 function updateToken(token) {
   sessionStore.dispatch({
     payload: {
-      token
+      token: token
     },
     type: StoreAction.UPDATE
   });
@@ -443,7 +463,7 @@ function updateToken(token) {
 function updateUser(user) {
   sessionStore.dispatch({
     payload: {
-      user
+      user: user
     },
     type: StoreAction.UPDATE
   });
