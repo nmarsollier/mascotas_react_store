@@ -13,16 +13,8 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "mv node_modules/symbol-observable/es/index.js node_modules/symbol-observable/es/index.mjs & microbundle-crl --no-compress --format modern,cjs --target ",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
-    "prepare": "run-s build",
-    "test": "run-s test:unit test:lint test:build",
-    "test:build": "run-s build",
-    "test:lint": "tslint .",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build"
+    "build": "mv node_modules/symbol-observable/es/index.js node_modules/symbol-observable/es/index.mjs & microbundle-crl --no-compress --format modern,es,cjs",
+    "prepare": "run-s build"
   },
   "devDependencies": {
     "@types/node": "14.0.4",

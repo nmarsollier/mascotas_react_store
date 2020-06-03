@@ -1,11 +1,10 @@
-import * as StoredStateModule from "./store/sessionStore";
-import { cleanSession, sessionStore, updateUser, updateToken } from "./store/sessionStore";
-
 export {
     sessionStore,
     cleanSession,
     updateUser,
     updateToken
-};
+} from "./store/sessionStore";
 
-export type StoredState = StoredStateModule.StoredState
+export {
+    StoredState
+} from "./store/sessionStore";
