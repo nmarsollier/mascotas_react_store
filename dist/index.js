@@ -452,6 +452,22 @@ var sessionStore = createStore(function (state, action) {
       return state;
   }
 });
+function updateToken(token) {
+  sessionStore.dispatch({
+    payload: {
+      token: token
+    },
+    type: StoreAction.UPDATE
+  });
+}
+function updateUser(user) {
+  sessionStore.dispatch({
+    payload: {
+      user: user
+    },
+    type: StoreAction.UPDATE
+  });
+}
 function cleanSession() {
   sessionStore.dispatch({
     payload: undefined,
@@ -461,4 +477,6 @@ function cleanSession() {
 
 exports.cleanSession = cleanSession;
 exports.sessionStore = sessionStore;
+exports.updateToken = updateToken;
+exports.updateUser = updateUser;
 //# sourceMappingURL=index.js.map
