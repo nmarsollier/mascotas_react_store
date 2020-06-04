@@ -475,5 +475,5 @@ function cleanSession() {
   });
 }
 
-export { cleanSession, sessionStore, updateToken, updateUser };
+export { cleanSession, updateToken, updateUser };
 //# sourceMappingURL=index.modern.js.map

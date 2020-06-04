@@ -476,7 +476,6 @@ function cleanSession() {
 }
 
 exports.cleanSession = cleanSession;
-exports.sessionStore = sessionStore;
 exports.updateToken = updateToken;
 exports.updateUser = updateUser;
 //# sourceMappingURL=index.js.map
