@@ -1,5 +1,6 @@
 export {
-    cleanSession,
-    updateUser,
-    updateToken
-} from "./store/sessionStore";
+    cleanupStore, StoredState, updateStoreToken,
+    updateStoreUser, useTokenState, useUserState
+} from "./store/rxJsStore";
+
+
