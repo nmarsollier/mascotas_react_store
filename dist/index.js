@@ -823,10 +823,10 @@ var AnonymousSubject = /*@__PURE__*/ (function (_super) {
     return AnonymousSubject;
 }(Subject));
 
-var mascotasState = {};
+exports.mascotasState = {};
 var mascotasStore = new Subject();
 function useUserState() {
-  var _useState = react.useState(mascotasState.user),
+  var _useState = react.useState(exports.mascotasState.user),
       user = _useState[0],
       setUser = _useState[1];
 
@@ -838,7 +838,7 @@ function useUserState() {
   return user;
 }
 function useTokenState() {
-  var _useState2 = react.useState(mascotasState.token),
+  var _useState2 = react.useState(exports.mascotasState.token),
       token = _useState2[0],
       setToken = _useState2[1];
 
@@ -850,20 +850,20 @@ function useTokenState() {
   return token;
 }
 function updateStoreToken(token) {
-  mascotasState = _extends({}, mascotasState, {
+  exports.mascotasState = _extends({}, exports.mascotasState, {
     token: token
   });
-  mascotasStore.next(mascotasState);
+  mascotasStore.next(exports.mascotasState);
 }
 function updateStoreUser(user) {
-  mascotasState = _extends({}, mascotasState, {
+  exports.mascotasState = _extends({}, exports.mascotasState, {
     user: user
   });
-  mascotasStore.next(mascotasState);
+  mascotasStore.next(exports.mascotasState);
 }
 function cleanupStore() {
-  mascotasState = {};
-  mascotasStore.next(mascotasState);
+  exports.mascotasState = {};
+  mascotasStore.next(exports.mascotasState);
 }
 
 exports.cleanupStore = cleanupStore;

@@ -4,7 +4,8 @@ export {
     updateStoreToken,
     updateStoreUser,
     useTokenState,
-    useUserState
+    useUserState,
+    mascotasState
 } from "./store/rxJsStore";
 
 

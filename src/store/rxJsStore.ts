@@ -13,7 +13,7 @@ export interface StoredState {
   user?: User;
 }
 
-let mascotasState: StoredState = {};
+export let mascotasState: StoredState = {};
 
 const mascotasStore = new Subject<StoredState>();
 

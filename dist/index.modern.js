@@ -885,5 +885,5 @@ function cleanupStore() {
   mascotasStore.next(mascotasState);
 }
 
-export { cleanupStore, updateStoreToken, updateStoreUser, useTokenState, useUserState };
+export { cleanupStore, mascotasState, updateStoreToken, updateStoreUser, useTokenState, useUserState };
 //# sourceMappingURL=index.modern.js.map
