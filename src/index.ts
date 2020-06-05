@@ -6,6 +6,6 @@ export {
     useTokenState,
     useUserState,
     mascotasState
-} from "./store/rxJsStore";
+} from "./store/mascotasStore";
 
 
