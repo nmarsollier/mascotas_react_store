@@ -1,5 +1,5 @@
+import { useLayoutEffect, useState } from "react";
 import { Subject } from "rxjs";
-import { useState, useLayoutEffect } from "react";
 
 export interface User {
   id: string;
