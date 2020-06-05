@@ -2278,6 +2278,7 @@ function useTokenState() {
   return token;
 }
 function updateStoreToken(token) {
+  axios$1.defaults.headers.common.Authorization = "bearer " + token;
   exports.mascotasState = _extends({}, exports.mascotasState, {
     token: token
   });
@@ -2290,18 +2291,12 @@ function updateStoreUser(user) {
   mascotasStore.next(exports.mascotasState);
 }
 function cleanupStore() {
+  axios$1.defaults.headers.common.Authorization = "";
   exports.mascotasState = {};
   mascotasStore.next(exports.mascotasState);
 }
+axios$1.defaults.headers.common["Content-Type"] = "application/json";
 function securedAxios() {
-  axios$1.defaults.headers.common["Content-Type"] = "application/json";
-
-  if (exports.mascotasState.token) {
-    axios$1.defaults.headers.common.Authorization = "";
-  } else {
-    axios$1.defaults.headers.common.Authorization = "bearer " + exports.mascotasState.token;
-  }
-
   return axios$1;
 }
 

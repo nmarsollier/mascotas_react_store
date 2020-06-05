@@ -43,6 +43,7 @@ export function useTokenState() {
 }
 
 export function updateStoreToken(token: string) {
+  axios.defaults.headers.common.Authorization = "bearer " + token;
   mascotasState = {
     ...mascotasState,
     token,
@@ -59,16 +60,13 @@ export function updateStoreUser(user: User) {
 }
 
 export function cleanupStore() {
+  axios.defaults.headers.common.Authorization = "";
   mascotasState = {};
   mascotasStore.next(mascotasState);
 }
 
+axios.defaults.headers.common["Content-Type"] = "application/json";
+
 export function securedAxios() {
-  axios.defaults.headers.common["Content-Type"] = "application/json";
-  if (mascotasState.token) {
-    axios.defaults.headers.common.Authorization = "";
-  } else {
-    axios.defaults.headers.common.Authorization = "bearer " + mascotasState.token;
-  }
   return axios;
 }

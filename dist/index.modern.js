@@ -2294,6 +2294,7 @@ function useTokenState() {
   return token;
 }
 function updateStoreToken(token) {
+  axios$1.defaults.headers.common.Authorization = "bearer " + token;
   mascotasState = _extends({}, mascotasState, {
     token: token
   });
@@ -2306,18 +2307,12 @@ function updateStoreUser(user) {
   mascotasStore.next(mascotasState);
 }
 function cleanupStore() {
+  axios$1.defaults.headers.common.Authorization = "";
   mascotasState = {};
   mascotasStore.next(mascotasState);
 }
+axios$1.defaults.headers.common["Content-Type"] = "application/json";
 function securedAxios() {
-  axios$1.defaults.headers.common["Content-Type"] = "application/json";
-
-  if (mascotasState.token) {
-    axios$1.defaults.headers.common.Authorization = "";
-  } else {
-    axios$1.defaults.headers.common.Authorization = "bearer " + mascotasState.token;
-  }
-
   return axios$1;
 }
 
