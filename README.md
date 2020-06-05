@@ -1,6 +1,8 @@
 # mascotas_react_store
 
-Modulo Store para mascotas.
+Modulo Store para toda la UI React de [mascotas modular](https://github.com/nmarsollier/mascotas_react_app).
+
+Ver proyecto original en [mascotas](https://github.com/nmarsollier/mascotas).
 
 ## Modo de uso
 
