@@ -1,4 +1,5 @@
-import { useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
+import { FormTitle, Form } from 'mascotas_react_common';
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -885,5 +886,39 @@ function cleanupStore() {
   mascotasStore.next(mascotasState);
 }
 
-export { cleanupStore, mascotasState, updateStoreToken, updateStoreUser, useTokenState, useUserState };
+function StateInfo() {
+  var user = useUserState();
+  var token = useTokenState();
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(FormTitle, null, "Informaci\xF3n de Perfil"), /*#__PURE__*/React.createElement(Form, null, /*#__PURE__*/React.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/React.createElement("label", null, "Login"), /*#__PURE__*/React.createElement("input", {
+    className: "form-control",
+    id: "login",
+    value: user === null || user === void 0 ? void 0 : user.login,
+    disabled: true
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/React.createElement("label", null, "Nombre"), /*#__PURE__*/React.createElement("input", {
+    className: "form-control",
+    id: "name",
+    value: user === null || user === void 0 ? void 0 : user.name,
+    disabled: true
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/React.createElement("label", null, "Permisos"), /*#__PURE__*/React.createElement("input", {
+    className: "form-control",
+    id: "name",
+    value: user === null || user === void 0 ? void 0 : user.permissions,
+    disabled: true
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/React.createElement("label", null, "Token"), /*#__PURE__*/React.createElement("input", {
+    className: "form-control",
+    id: "name",
+    value: token,
+    disabled: true
+  }))));
+}
+
+export { StateInfo, cleanupStore, mascotasState, updateStoreToken, updateStoreUser, useTokenState, useUserState };
 //# sourceMappingURL=index.modern.js.map

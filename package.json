@@ -17,16 +17,20 @@
     "prepare": "run-s build"
   },
   "devDependencies": {
-    "@types/node": "14.0.4",
-    "@types/react-redux": "7.1.9",
-    "microbundle-crl": "0.13.10",
-    "rxjs": "6.5.5",
-    "rxjs-hooks": "0.6.2",
-    "npm-run-all": "4.1.5",
-    "react-scripts": "3.4.1",
-    "tslint": "6.1.2",
-    "tslint-react": "5.0.0",
-    "typescript": "3.9.3"
+    "@types/node": "~14.0.11",
+    "@types/react-redux": "~7.1.9",
+    "microbundle-crl": "~0.13.10",
+    "@types/react": "~16.9.35",
+    "@types/react-dom": "~16.9.8",
+    "@types/react-router-dom": "~5.1.5",
+    "@types/mascotas_react_common": "git+https://github.com/nmarsollier/mascotas_react_common.git#master",
+    "rxjs": "~6.5.5",
+    "rxjs-hooks": "~0.6.2",
+    "npm-run-all": "~4.1.5",
+    "react-scripts": "~3.4.1",
+    "tslint": "~6.1.2",
+    "tslint-react": "~5.0.0",
+    "typescript": "~3.9.5"
   },
   "files": [
     "dist"

@@ -8,4 +8,4 @@ export {
     mascotasState
 } from "./store/mascotasStore";
 
-
+export { StateInfo } from "./components/StateInfo"

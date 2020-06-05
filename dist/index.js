@@ -1,4 +1,8 @@
-var react = require('react');
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var React = require('react');
+var React__default = _interopDefault(React);
+var mascotas_react_common = require('mascotas_react_common');
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -826,11 +830,11 @@ var AnonymousSubject = /*@__PURE__*/ (function (_super) {
 exports.mascotasState = {};
 var mascotasStore = new Subject();
 function useUserState() {
-  var _useState = react.useState(exports.mascotasState.user),
+  var _useState = React.useState(exports.mascotasState.user),
       user = _useState[0],
       setUser = _useState[1];
 
-  react.useLayoutEffect(function () {
+  React.useLayoutEffect(function () {
     mascotasStore.subscribe(function (newState) {
       setUser(newState.user);
     });
@@ -838,11 +842,11 @@ function useUserState() {
   return user;
 }
 function useTokenState() {
-  var _useState2 = react.useState(exports.mascotasState.token),
+  var _useState2 = React.useState(exports.mascotasState.token),
       token = _useState2[0],
       setToken = _useState2[1];
 
-  react.useLayoutEffect(function () {
+  React.useLayoutEffect(function () {
     mascotasStore.subscribe(function (newState) {
       setToken(newState.token);
     });
@@ -866,6 +870,41 @@ function cleanupStore() {
   mascotasStore.next(exports.mascotasState);
 }
 
+function StateInfo() {
+  var user = useUserState();
+  var token = useTokenState();
+  return /*#__PURE__*/React__default.createElement("div", null, /*#__PURE__*/React__default.createElement(mascotas_react_common.FormTitle, null, "Informaci\xF3n de Perfil"), /*#__PURE__*/React__default.createElement(mascotas_react_common.Form, null, /*#__PURE__*/React__default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/React__default.createElement("label", null, "Login"), /*#__PURE__*/React__default.createElement("input", {
+    className: "form-control",
+    id: "login",
+    value: user === null || user === void 0 ? void 0 : user.login,
+    disabled: true
+  })), /*#__PURE__*/React__default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/React__default.createElement("label", null, "Nombre"), /*#__PURE__*/React__default.createElement("input", {
+    className: "form-control",
+    id: "name",
+    value: user === null || user === void 0 ? void 0 : user.name,
+    disabled: true
+  })), /*#__PURE__*/React__default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/React__default.createElement("label", null, "Permisos"), /*#__PURE__*/React__default.createElement("input", {
+    className: "form-control",
+    id: "name",
+    value: user === null || user === void 0 ? void 0 : user.permissions,
+    disabled: true
+  })), /*#__PURE__*/React__default.createElement("div", {
+    className: "form-group"
+  }, /*#__PURE__*/React__default.createElement("label", null, "Token"), /*#__PURE__*/React__default.createElement("input", {
+    className: "form-control",
+    id: "name",
+    value: token,
+    disabled: true
+  }))));
+}
+
+exports.StateInfo = StateInfo;
 exports.cleanupStore = cleanupStore;
 exports.updateStoreToken = updateStoreToken;
 exports.updateStoreUser = updateStoreUser;
