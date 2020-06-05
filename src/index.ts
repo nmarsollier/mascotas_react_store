@@ -5,7 +5,8 @@ export {
     updateStoreUser,
     useTokenState,
     useUserState,
-    mascotasState
+    mascotasState,
+    securedAxios
 } from "./store/mascotasStore";
 
 export { StateInfo } from "./components/StateInfo"

@@ -14,3 +14,4 @@ export declare function useTokenState(): string | undefined;
 export declare function updateStoreToken(token: string): void;
 export declare function updateStoreUser(user: User): void;
 export declare function cleanupStore(): void;
+export declare function securedAxios(): import("axios").AxiosStatic;

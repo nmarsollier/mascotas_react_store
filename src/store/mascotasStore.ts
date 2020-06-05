@@ -1,5 +1,6 @@
 import { useLayoutEffect, useState } from "react";
 import { Subject } from "rxjs";
+import axios from "axios";
 
 export interface User {
   id: string;
@@ -60,4 +61,14 @@ export function updateStoreUser(user: User) {
 export function cleanupStore() {
   mascotasState = {};
   mascotasStore.next(mascotasState);
+}
+
+export function securedAxios() {
+  axios.defaults.headers.common["Content-Type"] = "application/json";
+  if (mascotasState.token) {
+    axios.defaults.headers.common.Authorization = "";
+  } else {
+    axios.defaults.headers.common.Authorization = "bearer " + mascotasState.token;
+  }
+  return axios;
 }
